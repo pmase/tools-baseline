@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo apt-get update
-sudo apt-get install build-essential git python libssl-dev -y
+sudo apt-get install build-essential git python libssl-dev fontconfig libfreetype6 -y
 
 if [ ! -d /tmp/src/node ]; then
     mkdir -p /tmp/src
@@ -24,7 +24,9 @@ sudo make install
 # set up node stuff
 cd /vagrant
 
-sudo npm install -g grunt-cli
+# these install best globally
+sudo npm install -g grunt-cli phantomjs
+
 # windows ruins it for everyone
 # http://www.conroyp.com/2013/04/13/symlink-shenanigans-nodejs-npm-express-vagrant/
 npm install --no-bin-link
