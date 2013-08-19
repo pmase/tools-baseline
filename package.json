@@ -1,0 +1,31 @@
+{
+  "name": "ptp-<ARCH>",
+  "version": "0.0.1",
+  "license": "MIT",
+  
+  "description": "an <ARCH> implementation of the PMASE Tools prototype",
+  
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.2"
+  },
+  
+  "engines": {
+    "node": ">=0.10"
+  },
+  
+  "scripts": {
+    "test": "grunt --verbose"
+  }
+  
+  "keywords": [
+    "collaboration",
+    "visualization"
+  ],
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<USER>/ptp-<ARCH>.git"
+  }
+}
