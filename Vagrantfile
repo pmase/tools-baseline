@@ -4,7 +4,7 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-# windows ruins again! doesn't provide `pathj`!
+# windows ruins again! doesn't provide `path`!
 $provision = <<SCRIPT
 /vagrant/bin/baseline-provision.sh
 SCRIPT

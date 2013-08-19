@@ -1,9 +1,9 @@
 {
-  "name": "ptp-ARCH",
+  "name": "tools-baseline",
   "version": "0.0.1",
   "license": "MIT",
   
-  "description": "an <ARCH> implementation of the PMASE Tools prototype",
+  "description": "an non-implementation of the PMASE Tools prototype",
   
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -26,6 +26,6 @@
   
   "repository": {
     "type": "git",
-    "url": "https://github.com/ORGANIZATION/ptp-ARCH.git"
+    "url": "https://github.com/pmase/tools-baseline.git"
   }
 }
