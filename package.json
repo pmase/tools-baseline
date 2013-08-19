@@ -1,5 +1,5 @@
 {
-  "name": "ptp-<ARCH>",
+  "name": "ptp-ARCH",
   "version": "0.0.1",
   "license": "MIT",
   
@@ -17,7 +17,7 @@
   
   "scripts": {
     "test": "grunt --verbose"
-  }
+  },
   
   "keywords": [
     "collaboration",
@@ -26,6 +26,6 @@
   
   "repository": {
     "type": "git",
-    "url": "https://github.com/<USER>/ptp-<ARCH>.git"
+    "url": "https://github.com/ORGANIZATION/ptp-ARCH.git"
   }
 }
