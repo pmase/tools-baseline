@@ -2,7 +2,8 @@
     delete this block and fill everything out. there are some files in the
     repo to clean up, too. cheers.
 
-# PMASE Tools Prototype: __ARCH__
+# PMASE Tools Prototype: Baseline
+[![Build Status](https://travis-ci.org/pmase/tools-baseline.png?branch=master)](https://travis-ci.org/pmase/tools-baseline)
 
 Document your system here.
 
@@ -58,10 +59,18 @@ browsers:
 ### Headless testing
 
 The test suite needs to be runnable entirely on an open continuous integration
-server, such as Travis-CI.  
+server, such as Travis-CI. This testing should include both the node.js server
+as well as a suitable impersonation of a GUI browser, such as PhantomJS and/or
+SlimerJS.
+
+### Multi-User, DIL Testing
+
+In an automated environment, a coordinated test between multiple users behind
+some form of network should be possible.
 
 ## Deploying
 
+TBD
 
 ## License
 Licensed under the terms of the [MIT License](./LICENSE).
