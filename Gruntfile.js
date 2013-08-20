@@ -20,13 +20,17 @@ module.exports = function(grunt) {
         },
       },
     },
+    mocha: {
+      all: ['test/*.html']
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-mocha');
 
   // add a real test framework here
-  // grunt.registerTask('test', []);
+  grunt.registerTask('test', ['mocha']);
 
   grunt.registerTask('default', ['jshint']);
 };

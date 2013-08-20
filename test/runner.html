@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PMASE Tools Test Runner</title>
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <h1>PMASE Tools</h1>
+  <div id="mocha"></div>
+  <script src="./lib/jquery.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/yadda/dist/yadda-0.4.5.js"></script>
+  
+  <script>
+    mocha.setup('bdd');
+    function assert(expr, msg) {
+      if (!expr) throw new Error(msg || 'failed');
+    }
+    
+    assert.equal = function(a, b, msg){
+      assert(a === b, msg);
+    };
+    
+    assert.contains = function(a, b, msg){
+      assert(a.indexOf(b) !== -1, msg);
+    }
+  </script>
+  
+  <script src="../features/dictionary.js"></script>
+  <script src="../features/library.js"></script>
+  
+  <!-- the steps -->
+  <script src="../features/steps/startup.js"></script>
+  
+  <script>
+    var yadda = require('yadda'),
+      Yadda = yadda.Yadda,
+      parser = new yadda.parsers.TextParser();
+    
+    var features = [
+        "startup"
+      ],
+      complete = features.length;
+    
+    
+    $.each(features, function(idx, path){
+      $.get("../features/" + path + ".feature?" + Math.random(), function(text){
+        describe(path, function(){
+          $.each(parser.parse(text), function(idx, scenario){
+            it(scenario.title, function(done) {
+                (new Yadda(library)).yadda(scenario.steps, done);
+            });
+          });
+        });
+        
+        complete--;
+        
+        if(!complete){
+          mocha.run();
+        }
+      });
+    });
+    
+    
+  </script>
+</body>
+</html>
+

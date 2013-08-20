@@ -1,8 +1,3 @@
-Feature: Add Card
-  In order to remember an idea
-  As a user of the system
-  I want to create a Card
-
   Scenario: New Card
     Given a browser window is open
     And I am logged in as user "alice" with password "secret"
