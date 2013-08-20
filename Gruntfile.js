@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'features/**/*.js'],
       // configure JSHint (documented at http://www.jshint.com/docs/)
       options: {
         // options here to override JSHint defaults
@@ -32,5 +32,5 @@ module.exports = function(grunt) {
   // add a real test framework here
   grunt.registerTask('test', ['mocha']);
 
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('default', ['jshint', 'test']);
 };

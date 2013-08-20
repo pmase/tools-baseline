@@ -1,4 +1,6 @@
 ;(function(require){
+  "use strict";
+  
   var yadda = require('yadda'),
     dictionary = new yadda.Dictionary();
   

@@ -1,4 +1,6 @@
 ;(function(require, library){
+  "use strict";
+  
   var noop = function(done){ done(); };
   
   library
