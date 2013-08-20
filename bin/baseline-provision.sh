@@ -1,6 +1,9 @@
 #!/bin/bash
 sudo apt-get update
-sudo apt-get install build-essential git python libssl-dev fontconfig libfreetype6 -y
+sudo apt-get install \
+  build-essential git python libssl-dev  \  # for Node
+  fontconfig libfreetype6 \                 # for Phantom
+  -y                                        # yes, dagnabit
 
 if [ ! -d /tmp/src/node ]; then
     mkdir -p /tmp/src
@@ -20,6 +23,9 @@ git checkout $TAG
 ./configure
 make
 sudo make install
+
+
+
 
 # set up node stuff
 cd /vagrant
