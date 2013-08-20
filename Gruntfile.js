@@ -49,12 +49,19 @@ module.exports = function(grunt) {
     mocha: {
       runner: {
         src: ['test/runner.html'],
-          
-        // Pipe output console.log from your JS to grunt. False by default.
-        log: true,
         
-        // Override the timeout of the test (default is 5000)
-        timeout: 10000
+        options: {
+          // Pipe output console.log from your JS to grunt. False by default.
+          log: true,
+          
+          // Override the timeout of the test (default is 5000)
+          timeout: 10000,
+          
+          
+          // Select a Mocha reporter
+          // http://visionmedia.github.com/mocha/#reporters
+          reporter: 'Nyan'
+        }
       }
     }
   });
