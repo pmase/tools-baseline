@@ -6,27 +6,20 @@
   <link rel="stylesheet" href="./lib/mocha.css" />
 </head>
 <body>
-  <h1>PMASE Tools</h1>
+  <div id="app"></div>
+  
   <div id="mocha"></div>
   
   <script src="./lib/jquery.js"></script>
+  <script src="./lib/d3.js"></script>
+  <script src="../lib/reference/reference.js"></script>
+  <script src="./lib/chai.js"></script>
   <script src="./lib/mocha.js"></script>
   <script src="./lib/yadda.js"></script>
   
   <script>
     mocha.setup('bdd');
-    
-    function assert(expr, msg) {
-      if (!expr) throw new Error(msg || 'failed');
-    }
-    
-    assert.equal = function(a, b, msg){
-      assert(a === b, msg);
-    };
-    
-    assert.contains = function(a, b, msg){
-      assert(a.indexOf(b) !== -1, msg);
-    };
+    chai.should();
   </script>
   
   <script src="./steps.js"></script>
@@ -40,17 +33,14 @@
     $.get("features.feature", function(text){
       describe("features", function(){
         $.each(parser.parse(text), function(idx, scenario){
+          var ctx = {ctx: {}};
           it(scenario.title, function(done) {
-              (new Yadda(library)).yadda(scenario.steps, done);
+              (new Yadda(library)).yadda(scenario.steps, ctx, done);
           });
         });
       });
       
-      if (window.mochaPhantomJS){
-        mochaPhantomJS.run();
-      } else {
-        mocha.run(); 
-      }
+      mocha.run();
     });
     
   </script>

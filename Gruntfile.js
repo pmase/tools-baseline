@@ -19,6 +19,14 @@ module.exports = function(grunt) {
         src: ['node_modules/mocha/mocha.js'],
         dest: 'test/lib/mocha.js',
       },
+      test_chai_js: {
+        src: ['node_modules/chai/chai.js'],
+        dest: 'test/lib/chai.js',
+      },
+      test_d3_js: {
+        src: ['node_modules/d3/d3.js'],
+        dest: 'test/lib/d3.js',
+      },
       test_mocha_css: {
         src: ['node_modules/mocha/mocha.css'],
         dest: 'test/lib/mocha.css',
@@ -29,13 +37,7 @@ module.exports = function(grunt) {
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'features/**/*.js'],
-      // configure JSHint (documented at http://www.jshint.com/docs/)
-      options: {
-        // options here to override JSHint defaults
-        globals: {
-        }
-      }
+      files: ['Gruntfile.js', 'features/**/*.js', 'lib/**/*.js']
     },
     watch: {
       scripts: {

@@ -5,13 +5,18 @@
   
   "description": "an non-implementation of the PMASE Tools prototype",
   
+  "dependences": {
+    "d3": "~3.2.8"
+  },
+  
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-watch": "~0.5.2",
     "yadda": "~0.4.5",
     "grunt-mocha": "~0.4.1",
-    "grunt-contrib-concat": "~0.3.0"
+    "grunt-contrib-concat": "~0.3.0",
+    "chai": "~1.7.2"
   },
   
   "engines": {
